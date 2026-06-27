@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="A magical, colorful, and animated birthday surprise website for the most special girl. Happy Birthday on July 1st!">
+  <title>Happy Birthday, My Love! Ammuzzzzzzzzzzzz💖😘</title>
+
+  <!-- Google Fonts for typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&family=Sacramento&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome for beautiful icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Particle Canvas for Confetti, Stars, and Hearts -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Ambient Audio Controls -->
+  <div id="audio-container" class="audio-control-container">
+    <button id="music-btn" class="music-btn" aria-label="Toggle music">
+      <i id="music-icon" class="fas fa-music"></i>
+    </button>
+    <div id="visualizer" class="visualizer-bars">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+
+  <!-- Hero & Countdown Section -->
+  <header id="hero-section" class="hero-container">
+    <div class="hero-content">
+      <div class="heart-pulse-icon">💖</div>
+      <h1 class="main-title">Happy Birthday, My Princess! Ammuzzzzzzzzzzzz💖😘</h1>
+      <p class="subtitle">The countdown to July 1st. Preparing something magical for you...</p>
+
+      <!-- Countdown Timer Grid -->
+      <div id="countdown" class="countdown-grid">
+        <div class="countdown-card">
+          <span id="days" class="number">00</span>
+          <span class="label">Days</span>
+        </div>
+        <div class="countdown-card">
+          <span id="hours" class="number">00</span>
+          <span class="label">Hours</span>
+        </div>
+        <div class="countdown-card">
+          <span id="minutes" class="number">00</span>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="countdown-card">
+          <span id="seconds" class="number">00</span>
+          <span class="label">Seconds</span>
+        </div>
+      </div>
+
+      <!-- CTA Button to unlock the surprise -->
+      <button id="unlock-btn" class="unlock-btn">
+        <span>Reveal Your Surprise</span> <i class="fa-solid fa-sparkles"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Surprises Container (Hidden initially or scrolled to after unlock) -->
+  <main id="surprise-container" class="surprise-container hidden">
+
+    <!-- Section 1: Floating Love Letter -->
+    <section id="letter-section" class="surprise-section">
+      <h2 class="section-title">A Special Letter For You</h2>
+      <p class="section-desc">Aa envelope onn njekki nook enikk parayanollath ellam athil end...</p>
+
+      <div class="envelope-wrapper">
+        <div id="envelope" class="envelope">
+          <div class="envelope-front"></div>
+          <div class="envelope-top-flap"></div>
+          <div id="letter" class="letter">
+            <div class="letter-content">
+              <p class="letter-date">June 2026</p>
+              <h3 class="letter-heading">My Dearest,</h3>
+              <p>Edo Happy Birth Day to You Ponnehhhh 😘😘😘😘😘😘😘.Njan ee website endakkiyath thanikk vendi ann enikk
+                than athrem
+                priyapettathann.😘😘😘😘😘😘😘😘😘😘.</p>
+              <p>namma edakk edakk thall pidikonkilum enikk thanodolla sneham orikalum korayula ath pole thanne
+                thirichum endaya mathiiii.
+                nammakk jeevitha avasanam vare inghanne thanne orumich ella karyathinum adipoli aayitt poka.</p>
+              <p>thazhott nookiya than enikk ayachathum namma rand perum koodi edthattolla photo end nookinook 🫣</p>
+              <p class="letter-signature">Njan ennum thande annn, <br><span class="signature-name">❤ Me</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Memory Polaroid Gallery -->
+    <section id="gallery-section" class="surprise-section">
+      <h2 class="section-title">Our Magical Memory Lane</h2>
+      <p class="section-desc">Enikk eetyom ishtolla korach photos aanith thande.</p>
+
+      <div class="gallery-grid">
+
+        <!-- Polaroid Card 1 -->
+        <div class="polaroid-wrapper" style="--rotation: -4deg;">
+          <div class="polaroid-card">
+            <div class="polaroid-image-container">
+              <img id="img-slot-1" src="WhatsApp Image 2026-06-27 at 1.30.33 AM (1).jpeg"
+                alt="Our Romantic Starlit Sky">
+              <label for="upload-slot-1" class="upload-overlay" title="Upload Photo">
+                <i class="fa-solid fa-camera"></i>
+                <span>Change Image</span>
+              </label>
+              <input type="file" id="upload-slot-1" class="photo-upload-input" accept="image/*">
+            </div>
+            <div class="polaroid-caption">Under the Starlit Sky 🌟</div>
+          </div>
+        </div>
+
+        <!-- Polaroid Card 2 -->
+        <div class="polaroid-wrapper" style="--rotation: 3deg;">
+          <div class="polaroid-card">
+            <div class="polaroid-image-container">
+              <img id="img-slot-2" src="WhatsApp Image 2026-06-27 at 1.30.33 AM.jpeg" alt="Sweet Birthday Wishes">
+              <label for="upload-slot-2" class="upload-overlay" title="Upload Photo">
+                <i class="fa-solid fa-camera"></i>
+                <span>Change Image</span>
+              </label>
+              <input type="file" id="upload-slot-2" class="photo-upload-input" accept="image/*">
+            </div>
+            <div class="polaroid-caption">Sweetest Wishes 🎂</div>
+          </div>
+        </div>
+
+        <!-- Polaroid Card 3 -->
+        <div class="polaroid-wrapper" style="--rotation: -2deg;">
+          <div class="polaroid-card">
+            <div class="polaroid-image-container">
+              <img id="img-slot-3" src="WhatsApp Image 2026-06-27 at 1.30.50 AM.jpeg" alt="Magical Love Diary">
+              <label for="upload-slot-3" class="upload-overlay" title="Upload Photo">
+                <i class="fa-solid fa-camera"></i>
+                <span>Change Image</span>
+              </label>
+              <input type="file" id="upload-slot-3" class="photo-upload-input" accept="image/*">
+            </div>
+            <div class="polaroid-caption">Magical Memories 📖</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Wishes & Balloon Pop -->
+    <section id="balloon-section" class="surprise-section">
+      <h2 class="section-title">Pop the Balloons!</h2>
+      <p class="section-desc">click on the floating balloons to pop them and reveal a sweet hidden message!. Onn njekki
+        pottich nook</p>
+
+      <div id="balloon-garden" class="balloon-garden">
+        <!-- Balloons will be injected by JavaScript -->
+      </div>
+
+      <!-- Pop Message Overlay -->
+      <div id="wish-box" class="wish-box hidden">
+        <div class="wish-icon">🎈</div>
+        <p id="wish-text" class="wish-text">Pop a balloon to see your birthday wish!</p>
+      </div>
+    </section>
+
+    <!-- Footer Section with a Big Heart -->
+    <footer class="birthday-footer">
+      <div class="footer-heart">💝</div>
+      <p class="footer-message">Wishing you a year as beautiful and glowing as your smile!Aa nonakuzhi enth adipoli
+        aanenn ariyoooo 🫣</p>
+      <p>love You Chakareeeeeeee 😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘</p>
+      <p>Ente Chaka Muthhhhh 😘😘😘😘😘😘😘😘😘😘😘😘😘😘</p>
+      <p class="footer-copyright">Made with love for July 1st, 2026</p>
+    </footer>
+
+  </main>
+
+  <!-- Load script file -->
+  <script src="script.js"></script>
+</body>
+
+</html>
